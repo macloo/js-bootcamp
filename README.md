@@ -40,4 +40,12 @@ document.querySelector('#unique-thing').addEventListener();
 document.querySelectorAll('.many-things').addEventListener();
 ```
 
-I love the way this instructor keeps referring to the MDN documentation. This would be perfect training for beginners.
+* Using `button` and `input` elements with JS
+* Types of event: `click`, `change`, `input`
+
+
+## Highlights of This Instructor's Style
+
+I love the way this instructor keeps referring to the **MDN documentation.** This would be perfect training for beginners.
+
+His explanation of an **empty element** &mdash; using `input` as the example, and showing [MDN's empty element page](https://developer.mozilla.org/en-US/docs/Glossary/Empty_element) &mdash; was very good (section 7, lecture 55).

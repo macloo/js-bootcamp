@@ -23,6 +23,9 @@ document.querySelector('#create').addEventListener('click', function(e) {
 document.querySelector('#delete').addEventListener('click', function(e) {
     console.log("Delete!");
 });
+document.querySelector('input').addEventListener('input', function(e) {
+    console.log(e.target.value);
+});
 
 // select element by index if multiples of that type of element -
 // document.querySelectorAll('button')[0].addEventListener();
