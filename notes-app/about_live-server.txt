@@ -1,0 +1,14 @@
+Node thing: live-server
++++++++++++++++++++++++
+
+npm install -g live-server
+
+To run it:
+cd into dir
+live-server
+pages in current dir served at: http://127.0.0.1:8080/
+
+Control-C to quit server
+
+Live reload enabled by default.
+Every time you save your HTML file, it refreshes automatically in Chrome.

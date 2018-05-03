@@ -1,0 +1,15 @@
+{
+  "name": "js-bootcamp",
+  "version": "1.0.0",
+  "description": "My working files from a Udemy course in 2018",
+  "main": "README.md",
+  "dependencies": {
+    "npm": "^6.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mindy McAdams",
+  "license": "MIT"
+}
