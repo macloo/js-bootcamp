@@ -25,6 +25,7 @@ npm install -g live-server
 
 1. notes-app: In `notes-app1.js` I listed a lot of JS commands he did not cover right away, because I was looking up jQuery equivalents. These are in a large comment at the end of the file.
 2. todo-app: Instead of deleting early code, I saved it in `first-file.html` and `todo-app1.js`.
+3. `notes-app/index56.html` is a nice demo of a very interactive DOM.
 
 I'm doing things that in the past I have done only with jQuery. No jQuery here.
 
@@ -40,12 +41,18 @@ document.querySelector('#unique-thing').addEventListener();
 document.querySelectorAll('.many-things').addEventListener();
 ```
 
-* Using `button` and `input` elements with JS
-* Types of event: `click`, `change`, `input`
+* Using `button` and `input` elements with JS console.log
+* Types of event: `click`, `change`, `input` (continuous)
 
 
 ## Highlights of This Instructor's Style
 
-I love the way this instructor keeps referring to the **MDN documentation.** This would be perfect training for beginners.
+I love the way this instructor keeps referring to the **MDN documentation.** He opens specific relevant pages and briefly shows how to use them. This would be perfect training for beginners.
 
 His explanation of an **empty element** &mdash; using `input` as the example, and showing [MDN's empty element page](https://developer.mozilla.org/en-US/docs/Glossary/Empty_element) &mdash; was very good (section 7, lecture 55).
+
+## Downsides
+
+Functions inside of functions inside of functions &mdash; it's practically de rigueur for JavaScript, but when the instructor suddenly starts piling it on (section 7, lecture 56), I thought: *Hoo-boy, you'll lose a lot of beginners right here.*
+
+In the same video (56), he advocates using an empty `div` and filling it with content using JS, with no fallback. It works for the tutorial but it's not a good practice for accessible content.

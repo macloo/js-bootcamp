@@ -8,7 +8,7 @@ const todo = [{
         priority: 1,
         completed: true
     },{
-        task: 'Buy food',
+        task: 'Buy soap',
         priority: 1,
         completed: false
     },{
@@ -26,9 +26,12 @@ const incompleteItems = todo.filter(function(item) {
     return !item.completed;
 });
 
+// empty the div of all items
+// document.querySelector('#todos').innerHTML = '';
+
 // add a new p
 const newPara = document.createElement('p');
-newPara.textContent = `You have ${incompleteItems.length} to-dos left.`;
+newPara.textContent = `You have ${incompleteItems.length} uncompleted to-dos:`;
 // put it inside #todos div, at the bottom
 document.querySelector('#todos').appendChild(newPara);
 
@@ -40,20 +43,17 @@ document.querySelector('#todos').appendChild(newList);
 incompleteItems.forEach(function(item) {
     const newItem = document.createElement('li');
     newItem.textContent = `${item.task}. Priority: ${item.priority}`;
+    // add it inside the UL
     document.querySelector('ul').appendChild(newItem);
 });
 
-// event listener
-document.querySelector('button').addEventListener('click', function(e) {
-    console.log('Button was clicked');
+// event listeners
+document.querySelector('#create').addEventListener('click', function(e) {
+    console.log('Create button was clicked');
 });
-
-// select all p elements, store in ps
-// const ps = document.querySelectorAll('p');
-
-// loop over p's and remove any containing "the"
-// ps.forEach(function(p) {
-//     if ( p.textContent.toLowerCase().includes("the") ) {
-//         p.remove();
-//     }
-// });
+document.querySelector('#delete').addEventListener('click', function(e) {
+    console.log('Delete button was clicked');
+});
+document.querySelector('#search').addEventListener('input', function(e) {
+    console.log(e.target.value);
+});
