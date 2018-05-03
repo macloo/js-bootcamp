@@ -12,6 +12,10 @@ const todo = [{
         priority: 1,
         completed: false
     },{
+        task: 'Buy books',
+        priority: 4,
+        completed: false
+    },{
         task: 'Mow lawn',
         priority: 2,
         completed: true
@@ -21,31 +25,42 @@ const todo = [{
         completed: false
     }];
 
-// get all not-completed items
-const incompleteItems = todo.filter(function(item) {
+// an object containing various filters
+const filters = {
+    searchText: '',
+}
+
+// retrieve only not-completed todo items
+const incompleteTodos = todo.filter(function (item) {
     return !item.completed;
 });
 
-// empty the div of all items
-// document.querySelector('#todos').innerHTML = '';
+// main function
+function writeTodos(filters, todo) {
+    // get all todo items that match the searchText filter (which will change)
+    const filteredTodos = todo.filter(function (item) {
+        return item.task
+                   .toLowerCase()
+                   .includes( filters.searchText.toLowerCase() );
+    });
+    // empty the div of all items
+    document.querySelector('#todos').innerHTML = '';
 
-// add a new p
-const newPara = document.createElement('p');
-newPara.textContent = `You have ${incompleteItems.length} uncompleted to-dos:`;
-// put it inside #todos div, at the bottom
-document.querySelector('#todos').appendChild(newPara);
+    // set up a UL element
+    const newList = document.createElement('ul');
+    document.querySelector('#todos').appendChild(newList);
 
-// set up a UL element
-const newList = document.createElement('ul');
-document.querySelector('#todos').appendChild(newList);
+    // add all todo task items as LIs to UL
+    filteredTodos.forEach(function(item) {
+        const newItem = document.createElement('li');
+        newItem.textContent = `${item.task}. Priority: ${item.priority}`;
+        // add it inside the UL
+        document.querySelector('ul').appendChild(newItem);
+    });
+}
 
-// add all not-completed items as LIs to UL
-incompleteItems.forEach(function(item) {
-    const newItem = document.createElement('li');
-    newItem.textContent = `${item.task}. Priority: ${item.priority}`;
-    // add it inside the UL
-    document.querySelector('ul').appendChild(newItem);
-});
+// run function
+writeTodos(filters, incompleteTodos);
 
 // event listeners
 document.querySelector('#create').addEventListener('click', function(e) {
@@ -55,5 +70,8 @@ document.querySelector('#delete').addEventListener('click', function(e) {
     console.log('Delete button was clicked');
 });
 document.querySelector('#search').addEventListener('input', function(e) {
-    console.log(e.target.value);
+    // change value of a property in the filters object
+    // e.target is the input-text field
+    filters.searchText = e.target.value;
+    writeTodos(filters, incompleteTodos);
 });
