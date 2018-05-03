@@ -19,7 +19,7 @@ Node is installed. The course is in the console throughout these first sections:
 
 Now we leave the console and start manipulating the DOM. We install live-server:
 
-```
+```bash
 npm install -g live-server
 ```
 
@@ -30,5 +30,14 @@ I'm doing things that in the past I have done only with jQuery. No jQuery here.
 
 * Add or remove elements, content of elements
 * Event listeners
+
+```javascript
+document.querySelector('button').addEventListener();
+document.querySelectorAll('button')[0].addEventListener();
+// by ID - no need for .getElementById()
+document.querySelector('#unique-thing').addEventListener();
+// by class - no need for .getElementsByClassName()
+document.querySelectorAll('.many-things').addEventListener();
+```
 
 I love the way this instructor keeps referring to the MDN documentation. This would be perfect training for beginners.

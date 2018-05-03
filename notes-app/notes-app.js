@@ -11,11 +11,25 @@ const notes = [{
 ]
 
 // event listener
-document.querySelector('button').addEventListener('click', function(e) {
-    // some fun things demonstrated 
-    console.log(e);
-    e.target.textContent ="Foobar!";
+// document.querySelector('button').addEventListener('click', function(e) {
+    // some fun things demonstrated
+    // console.log(e);
+    // e.target.textContent ="Foobar!";
+// });
+
+document.querySelector('#create').addEventListener('click', function(e) {
+    console.log("Create!");
 });
+document.querySelector('#delete').addEventListener('click', function(e) {
+    console.log("Delete!");
+});
+
+// select element by index if multiples of that type of element -
+// document.querySelectorAll('button')[0].addEventListener();
+// by ID - no need for .getElementById()
+// document.querySelector('#unique-thing').addEventListener();
+// by class -
+// document.querySelectorAll('.many-things').addEventListener();
 
 // add all items as Ps to wrapper
 notes.forEach(function(item) {
