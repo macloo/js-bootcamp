@@ -29,18 +29,23 @@ const incompleteItems = todo.filter(function(item) {
 // add a new p
 const newPara = document.createElement('p');
 newPara.textContent = `You have ${incompleteItems.length} to-dos left.`;
-// put it inside #wrapper div, at the bottom
-document.querySelector('#wrapper').appendChild(newPara);
+// put it inside #todos div, at the bottom
+document.querySelector('#todos').appendChild(newPara);
 
 // set up a UL element
 const newList = document.createElement('ul');
-document.querySelector('#wrapper').appendChild(newList);
+document.querySelector('#todos').appendChild(newList);
 
 // add all not-completed items as LIs to UL
 incompleteItems.forEach(function(item) {
     const newItem = document.createElement('li');
     newItem.textContent = `${item.task}. Priority: ${item.priority}`;
     document.querySelector('ul').appendChild(newItem);
+});
+
+// event listener
+document.querySelector('button').addEventListener('click', function(e) {
+    console.log('Button was clicked');
 });
 
 // select all p elements, store in ps

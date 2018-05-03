@@ -1,43 +1,25 @@
-console.log('Hello, World!');
+const notes = [{
+    title: 'Books I want to read',
+    body: 'War and Peace, Tolstoy'
+},{
+    title: 'Movies I want to see',
+    body: 'Black Panther'
+},{
+    title: 'Food I want to cook',
+    body: 'Lamb tajine'
+}
+]
 
-const p = document.querySelector('p');
-console.log(p);
-// note for students: won't work if script tag is in the head
+// event listener
+document.querySelector('button').addEventListener('click', function(e) {
+    // some fun things demonstrated 
+    console.log(e);
+    e.target.textContent ="Foobar!";
+});
 
-p.remove();
-
-// note that querySelector() finds only the first element of the type specified
-// to find all:
-const ps = document.querySelectorAll('p');
-ps.forEach(function(p) {
-    console.log(p.textContent);
-    // write new text inside designated p element
-    ps[0].textContent = "Hello, World!";
-    // p.remove();
-})
-
-// add a new p
-const newPara = document.createElement('p');
-newPara.textContent = "This is my new paragraph.";
-// put it inside #wrapper div, at the bottom
-document.querySelector('#wrapper').appendChild(newPara);
-
-
-/*
-document.getElementById('item');
-document.getElementsByClassName('item');
-item.classList.add('new-class');
-item.classList.remove('new-class');
-// show/hide
-item.style.display = 'none';
-item.style.display = '';
-
-item.prepend(someOtherItem);
-item.before(someOtherItem);
-item.append(someOtherItem);
-item.after(someOtherItem);
-
-item.replaceWith(someOtherItem);
-// find the closest ancestor that matches a given selector - go up the DOM
-item.closest('div');
-*/
+// add all items as Ps to wrapper
+notes.forEach(function(item) {
+    const newItem = document.createElement('p');
+    newItem.textContent = `${item.title}: ${item.body}`;
+    document.querySelector('#notes').appendChild(newItem);
+});

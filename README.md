@@ -27,3 +27,8 @@ npm install -g live-server
 2. todo-app: Instead of deleting early code, I saved it in `first-file.html` and `todo-app1.js`.
 
 I'm doing things that in the past I have done only with jQuery. No jQuery here.
+
+* Add or remove elements, content of elements
+* Event listeners
+
+I love the way this instructor keeps referring to the MDN documentation. This would be perfect training for beginners.
