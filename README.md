@@ -1,4 +1,4 @@
-JS Bootcamp Working Files
+# JS Bootcamp Working Files
 
 Course: [Modern JavaScript Bootcamp (2018)](https://www.udemy.com/modern-javascript/learn/v4/content)
 
@@ -23,7 +23,7 @@ Now we leave the console and start manipulating the DOM. We install live-server:
 npm install -g live-server
 ```
 
-1. notes-app: In `notes-app.js` I listed a lot of JS commands he did not cover right away, because I was looking up jQuery equivalents. These are in a large comment at the end of the file.
+1. notes-app: In `notes-app1.js` I listed a lot of JS commands he did not cover right away, because I was looking up jQuery equivalents. These are in a large comment at the end of the file.
 2. todo-app: Instead of deleting early code, I saved it in `first-file.html` and `todo-app1.js`.
 
 I'm doing things that in the past I have done only with jQuery. No jQuery here.
