@@ -1,3 +1,5 @@
+// add form
+
 // an array of objects
 const todo = [{
         task: 'Wash car',
@@ -30,15 +32,14 @@ const filters = {
     searchText: '',
 }
 
-// retrieve only not-completed todo items
-const incompleteTodos = todo.filter(function (item) {
-    return !item.completed;
-});
-
 // main function
 function writeTodos(filters, todo) {
+    // retrieve only not-completed todo items
+    const incompleteTodos = todo.filter(function (item) {
+        return !item.completed;
+    });
     // get all todo items that match the searchText filter (which will change)
-    const filteredTodos = todo.filter(function (item) {
+    const filteredTodos = incompleteTodos.filter(function (item) {
         return item.task
                    .toLowerCase()
                    .includes( filters.searchText.toLowerCase() );
@@ -60,18 +61,22 @@ function writeTodos(filters, todo) {
 }
 
 // run function
-writeTodos(filters, incompleteTodos);
+writeTodos(filters, todo);
 
 // event listeners
-document.querySelector('#create').addEventListener('click', function(e) {
-    console.log('Create button was clicked');
-});
-document.querySelector('#delete').addEventListener('click', function(e) {
-    console.log('Delete button was clicked');
-});
 document.querySelector('#search').addEventListener('input', function(e) {
     // change value of a property in the filters object
     // e.target is the input-text field
     filters.searchText = e.target.value;
-    writeTodos(filters, incompleteTodos);
+    writeTodos(filters, todo);
+});
+// write a new task and add it to array
+document.querySelector('#todo-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const newTask = e.target.elements.newTodo.value;
+    const newItem = { task: newTask, priority: 1, completed: false };
+    todo.push(newItem);
+    // clear the field
+    e.target.elements.newTodo.value = '';
+    writeTodos(filters, todo);
 });

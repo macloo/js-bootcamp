@@ -1,3 +1,4 @@
+// deleting a lot of old code here, adding a form
 const notes = [{
     title: 'Books I want to read',
     body: 'War and Peace, Tolstoy'
@@ -7,32 +8,14 @@ const notes = [{
 },{
     title: 'Food I want to cook',
     body: 'Lamb tajine'
-}
-]
+}]
 
-// event listener
-// document.querySelector('button').addEventListener('click', function(e) {
-    // some fun things demonstrated
-    // console.log(e);
-    // e.target.textContent ="Foobar!";
-// });
-
-document.querySelector('#create').addEventListener('click', function(e) {
-    console.log("Create!");
+document.querySelector('#note-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    console.log(e.target.elements.newNote.value);
+    // clear the field
+    e.target.elements.newNote.value = '';
 });
-document.querySelector('#delete').addEventListener('click', function(e) {
-    console.log("Delete!");
-});
-document.querySelector('input').addEventListener('input', function(e) {
-    console.log(e.target.value);
-});
-
-// select element by index if multiples of that type of element -
-// document.querySelectorAll('button')[0].addEventListener();
-// by ID - no need for .getElementById()
-// document.querySelector('#unique-thing').addEventListener();
-// by class -
-// document.querySelectorAll('.many-things').addEventListener();
 
 // add all items as Ps to wrapper
 notes.forEach(function(item) {
