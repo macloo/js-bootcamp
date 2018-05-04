@@ -43,6 +43,8 @@ document.querySelectorAll('.many-things').addEventListener();
 
 * Using `button` and `input` elements with JS console.log
 * Types of event: `click`, `change`, `input` (continuous)
+* Form controls, `submit`, `preventDefault()`
+* Append form input to array, then rewrite page contents
 
 
 ## Highlights of This Instructor's Style
