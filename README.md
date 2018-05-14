@@ -45,7 +45,13 @@ document.querySelectorAll('.many-things').addEventListener();
 * Types of event: `click`, `change`, `input` (continuous)
 * Form controls, `submit`, `preventDefault()`
 * Append form input to array, then rewrite page contents
-* Use a checkbox to filter displayed items in a list (to-do app; lesson 59)
+* Use a checkbox `input` to filter displayed items in a list (to-do app; lesson 59)
+* Values in `select` menu (lesson 60)
+
+
+## Data Storage and Libraries
+
+To come.
 
 
 ## Highlights of This Instructor's Style

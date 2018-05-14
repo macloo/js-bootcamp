@@ -17,6 +17,11 @@ document.querySelector('#note-form').addEventListener('submit', function(e) {
     e.target.elements.newNote.value = '';
 });
 
+// new event listener - for select menu 
+document.querySelector('#sort-by').addEventListener('change', function(e) {
+    console.log(e.target.value);
+});
+
 // add all items as Ps to wrapper
 notes.forEach(function(item) {
     const newItem = document.createElement('p');
