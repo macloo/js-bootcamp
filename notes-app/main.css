@@ -15,3 +15,6 @@ select {
     display: block;
     margin-bottom: 0.5em;
 }
+span {
+    margin-left: 0.7em;
+}

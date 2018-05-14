@@ -9,7 +9,7 @@ function getStoredData() {
     }
 }
 
-// add notes to page from notes array - DOM stuff 
+// add notes to page from notes array - DOM stuff
 function writeNotes(notes) {
     const notesDiv = document.querySelector('#notes');
     // clear the div
@@ -17,7 +17,13 @@ function writeNotes(notes) {
     // add all items as Ps to the div
     notes.forEach(function(note) {
         const newItem = document.createElement('p');
-        newItem.textContent = note;
+        const span1 = document.createElement('span');
+        const newButton = document.createElement('button');
+        span1.textContent = note;
+        newButton.textContent = "x";
+        // construct the p and append it
+        newItem.appendChild(newButton);
+        newItem.appendChild(span1);
         notesDiv.appendChild(newItem);
     });
 }

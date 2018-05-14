@@ -12,9 +12,13 @@ body {
     padding: 1em;
 }
 li {
-    line-height: 1.5em;
+    line-height: 1.8em;
+    list-style: none;
 }
 label {
     display: block;
     padding-bottom: 0.5em;
+}
+span {
+    margin: 0 0.7em;
 }

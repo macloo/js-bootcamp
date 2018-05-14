@@ -41,7 +41,16 @@ function writeTodosToHTML(filteredTodos) {
     // add all todo task items as LIs to UL
     filteredTodos.forEach(function(item) {
         const newItem = document.createElement('li');
-        newItem.textContent = `${item.task}. Priority: ${item.priority}`;
+        const newBox = document.createElement('input');
+        const newSpan = document.createElement('span');
+        const newButton = document.createElement('button');
+        newBox.setAttribute('type', 'checkbox');
+        newSpan.textContent = `${item.task} Priority: ${item.priority}`;
+        newButton.textContent = "x";
+        // build the LI's contents
+        newItem.append(newBox);
+        newItem.append(newSpan);
+        newItem.append(newButton);
         // add it inside the UL
         document.querySelector('ul').appendChild(newItem);
     });

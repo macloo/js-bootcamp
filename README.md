@@ -88,6 +88,8 @@ console.log(theUser.name);
 Also covered:
 
 * Refactoring code
+* Use of `debugger`: Pause and play; examine values (lesson 66)
+* Appending multiple items to the DOM
 
 
 ## Highlights of This Instructor's Style
