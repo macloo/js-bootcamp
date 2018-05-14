@@ -62,6 +62,26 @@ To clear all localStorage data for this page: `localStorage.clear();`
 
 Local storage requires a string; it will not accept arrays or objects. I learned this last year when I did [this project](https://github.com/macloo/to-do-list-localstorage).
 
+```javascript
+const user = {
+    'name': 'Mindy',
+    'age': 58
+};
+// JSONification of an object
+const userJSON = JSON.stringify(user);
+// log the string
+console.log(userJSON);
+// for comparison, log the object
+console.log(user);
+// store stringified object in one key
+localStorage.setItem('user', userJSON);
+// log the extracted object
+console.log( JSON.parse(localStorage.getItem('user')) );
+// get out complete object as object, not string
+const theUser = JSON.parse( localStorage.getItem('user') );
+// use object's keys normally
+console.log(theUser.name);
+```
 
 ## Highlights of This Instructor's Style
 

@@ -29,14 +29,15 @@ notes.forEach(function(item) {
     document.querySelector('#notes').appendChild(newItem);
 });
 
-// basics of localStorage
-// create
-localStorage.setItem('foobar', 'My darling foo!');
-// read
-console.log(localStorage.getItem('foobar'));
-// update
-localStorage.setItem('foobar', 'No more bars?');
-console.log(localStorage.getItem('foobar'));
-// delete
-localStorage.removeItem('foobar');
-console.log(localStorage.getItem('foobar'));
+// JSONification of an object
+const user = {
+    'name': 'Mindy',
+    'age': 58
+};
+const userJSON = JSON.stringify(user);
+console.log(userJSON);
+console.log(user);
+localStorage.setItem('user', userJSON);
+console.log( JSON.parse(localStorage.getItem('user')) );
+const theUser = JSON.parse(localStorage.getItem('user'));
+console.log(theUser.name);
