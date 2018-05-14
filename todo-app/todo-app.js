@@ -1,41 +1,26 @@
-// an array of objects
-const todo = [{
-        task: 'Wash car',
-        priority: 3,
-        completed: false
-    },{
-        task: 'Wash dog',
-        priority: 1,
-        completed: true
-    },{
-        task: 'Buy soap',
-        priority: 1,
-        completed: false
-    },{
-        task: 'Buy books',
-        priority: 4,
-        completed: false
-    },{
-        task: 'Mow lawn',
-        priority: 2,
-        completed: true
-    },{
-        task: 'Grade papers',
-        priority: 5,
-        completed: false
-    }];
+// now using localStorage
+let todo = [];
 
 // an object containing various filters
 const filters = {
     searchText: '',
     hideCompleted: false
+};
+
+// check for stored data
+const todosJSON = localStorage.getItem('todos');
+if (todosJSON !== null) {
+    todo = JSON.parse( todosJSON );
+    writeTodos(filters, todo);
+} else {
+    console.log("You have no to-dos.");
 }
 
 // main function
 function writeTodos(filters, todo) {
     // retrieve all or only not-completed todo items based on filters value
     // this is changed for this version, in which checkbox was added
-    // see event handler for '#hide-completed' 
+    // see event handler for '#hide-completed'
     const visibleTodos = todo.filter(function (item) {
         // if hideCompleted is true, return only items NOT completed
         if (filters.hideCompleted) {
@@ -85,6 +70,7 @@ document.querySelector('#todo-form').addEventListener('submit', function(e) {
     const newTask = e.target.elements.newTodo.value;
     const newItem = { task: newTask, priority: 1, completed: false };
     todo.push(newItem);
+    localStorage.setItem( 'todos', JSON.stringify(todo) );
     // clear the field
     e.target.elements.newTodo.value = '';
     writeTodos(filters, todo);

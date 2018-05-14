@@ -11,3 +11,7 @@ body {
     margin: 1em auto;
     padding: 1em;
 }
+select {
+    display: block;
+    margin-bottom: 0.5em;
+}

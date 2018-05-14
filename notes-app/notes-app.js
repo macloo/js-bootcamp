@@ -1,20 +1,22 @@
-// deleting a lot of old code here, adding a form
-const notes = [{
-    title: 'Books I want to read',
-    body: 'War and Peace, Tolstoy'
-},{
-    title: 'Movies I want to see',
-    body: 'Black Panther'
-},{
-    title: 'Food I want to cook',
-    body: 'Lamb tajine'
-}]
+// deleted hard-coded notes; now using localStorage, lesson 63
+let notes = [];
+
+// check for stored data
+const notesJSON = localStorage.getItem('notes');
+if (notesJSON !== null) {
+    notes = JSON.parse( notesJSON );
+    writeNotes(notes);
+} else {
+    console.log("You have no notes.");
+}
 
 document.querySelector('#note-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    console.log(e.target.elements.newNote.value);
+    notes.push(e.target.elements.newNote.value);
     // clear the field
     e.target.elements.newNote.value = '';
+    localStorage.setItem( 'notes', JSON.stringify(notes) );
+    writeNotes(notes);
 });
 
 // new event listener - for select menu
@@ -22,22 +24,16 @@ document.querySelector('#sort-by').addEventListener('change', function(e) {
     console.log(e.target.value);
 });
 
-// add all items as Ps to wrapper
-notes.forEach(function(item) {
-    const newItem = document.createElement('p');
-    newItem.textContent = `${item.title}: ${item.body}`;
-    document.querySelector('#notes').appendChild(newItem);
-});
-
-// JSONification of an object
-const user = {
-    'name': 'Mindy',
-    'age': 58
-};
-const userJSON = JSON.stringify(user);
-console.log(userJSON);
-console.log(user);
-localStorage.setItem('user', userJSON);
-console.log( JSON.parse(localStorage.getItem('user')) );
-const theUser = JSON.parse(localStorage.getItem('user'));
-console.log(theUser.name);
+// get notes from localStorage and add to page
+function writeNotes(notes) {
+    const notesDiv = document.querySelector('#notes');
+    // clear the div
+    notesDiv.innerHTML = '';
+    // add all items as Ps to the div
+    notes.forEach(function(note) {
+        const newItem = document.createElement('p');
+        // newItem.textContent = `${item.title}: ${item.body}`;
+        newItem.textContent = note;
+        notesDiv.appendChild(newItem);
+    });
+}
