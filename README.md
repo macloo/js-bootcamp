@@ -67,7 +67,9 @@ const user = {
     'name': 'Mindy',
     'age': 58
 };
-// JSONification of an object
+
+// JSONification: object to string and back again
+
 const userJSON = JSON.stringify(user);
 // log the string
 console.log(userJSON);
@@ -82,6 +84,11 @@ const theUser = JSON.parse( localStorage.getItem('user') );
 // use object's keys normally
 console.log(theUser.name);
 ```
+
+Also covered:
+
+* Refactoring code
+
 
 ## Highlights of This Instructor's Style
 
