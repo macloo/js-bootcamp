@@ -17,7 +17,7 @@ document.querySelector('#note-form').addEventListener('submit', function(e) {
     e.target.elements.newNote.value = '';
 });
 
-// new event listener - for select menu 
+// new event listener - for select menu
 document.querySelector('#sort-by').addEventListener('change', function(e) {
     console.log(e.target.value);
 });
@@ -28,3 +28,15 @@ notes.forEach(function(item) {
     newItem.textContent = `${item.title}: ${item.body}`;
     document.querySelector('#notes').appendChild(newItem);
 });
+
+// basics of localStorage
+// create
+localStorage.setItem('foobar', 'My darling foo!');
+// read
+console.log(localStorage.getItem('foobar'));
+// update
+localStorage.setItem('foobar', 'No more bars?');
+console.log(localStorage.getItem('foobar'));
+// delete
+localStorage.removeItem('foobar');
+console.log(localStorage.getItem('foobar'));

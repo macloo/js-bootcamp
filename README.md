@@ -51,7 +51,16 @@ document.querySelectorAll('.many-things').addEventListener();
 
 ## Data Storage and Libraries
 
-To come.
+Create, read, update and delete (CRUD) using `localStorage`.
+
+* Create: `localStorage.setItem('key', 'value');`
+* Read: `localStorage.getItem('key');`
+* Update: `localStorage.setItem('key', 'new value');`
+* Delete: `localStorage.removeItem('key');`
+
+To clear all localStorage data for this page: `localStorage.clear();`
+
+Local storage requires a string; it will not accept arrays or objects. I learned this last year when I did [this project](https://github.com/macloo/to-do-list-localstorage).
 
 
 ## Highlights of This Instructor's Style
