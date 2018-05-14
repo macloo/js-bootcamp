@@ -22,7 +22,12 @@ document.querySelector('#search').addEventListener('input', function(e) {
 document.querySelector('#todo-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const newTask = e.target.elements.newTodo.value;
-    const newItem = { task: newTask, priority: 1, completed: false };
+    const newItem = {
+        id: uuidv4(),
+        task: newTask,
+        priority: 1,
+        completed: false
+    };
     todo.push(newItem);
     localStorage.setItem( 'todos', JSON.stringify(todo) );
     // clear the field

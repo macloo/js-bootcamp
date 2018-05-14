@@ -19,7 +19,7 @@ function writeNotes(notes) {
         const newItem = document.createElement('p');
         const span1 = document.createElement('span');
         const newButton = document.createElement('button');
-        span1.textContent = note;
+        span1.textContent = note.body;
         newButton.textContent = "x";
         // construct the p and append it
         newItem.appendChild(newButton);

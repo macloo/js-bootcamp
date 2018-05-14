@@ -90,6 +90,7 @@ Also covered:
 * Refactoring code
 * Use of `debugger`: Pause and play; examine values (lesson 66)
 * Appending multiple items to the DOM
+* Use of [node-uuid](https://github.com/kelektiv/node-uuid) library to generate unique IDs for items 
 
 
 ## Highlights of This Instructor's Style

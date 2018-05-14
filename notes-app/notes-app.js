@@ -6,7 +6,11 @@ writeNotes(notes);
 // write a new note on form submit
 document.querySelector('#note-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    notes.push(e.target.elements.newNote.value);
+    // each note is an object; uuidv4() comes from script attached to index.html
+    notes.push({
+        id: uuidv4(),
+        body: e.target.elements.newNote.value
+    });
     // clear the field
     e.target.elements.newNote.value = '';
     localStorage.setItem( 'notes', JSON.stringify(notes) );
