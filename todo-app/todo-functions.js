@@ -31,6 +31,18 @@ function getSearchMatches(filters, visibleTodos) {
     });
 }
 
+// find todo by id and delete that object from the array
+function removeTodo(id) {
+    // find object (note) for which id equals the argument
+    const todoIndex = todo.findIndex(function(item) {
+        return item.id === id;
+    });
+    if (todoIndex > -1) {
+        // delete that one object
+        todo.splice(todoIndex, 1);
+    }
+}
+
 // write into the DOM
 function writeTodosToHTML(filteredTodos) {
     // empty the div of all items
@@ -47,6 +59,11 @@ function writeTodosToHTML(filteredTodos) {
         newBox.setAttribute('type', 'checkbox');
         newSpan.textContent = `${item.task} Priority: ${item.priority}`;
         newButton.textContent = "x";
+        newButton.addEventListener('click', function() {
+            removeTodo(item.id);
+            localStorage.setItem( 'todos', JSON.stringify(todo) );
+            writeTodos(filters, todo);
+        });
         // build the LI's contents
         newItem.append(newBox);
         newItem.append(newSpan);
